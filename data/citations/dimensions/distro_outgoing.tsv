@@ -1,32 +1,32 @@
 discipline	perc	type
-Psychology	24.6482975518912	ss
-Linguistics	20.584666648557	ah
-Digital Humanities	15.2437091969321	ss
-Pedagogical & Educational Research	10.1420995602398	ss
-Philosophy	6.02142359130376	ah
-Anthropology	4.12255552015961	ss
-Archaeology	3.17512450997903	ah
-Musicology	2.44659948025605	ah
-History & Philosophy of Science	1.88037438465276	ah
-Media Studies and Communication	1.70010209941755	ah
-Art and Art History	1.64766673608658	ah
-Interdisciplinary research in the Social Sciences	1.48022204496819	ss
-Literature	1.3244113643429	ah
-History	0.794103532266676	ah
-Gender Studies	0.686351741685451	ss
-Law	0.532420612283701	ss
-Sociology	0.508494062401646	ss
-Environmental Studies	0.460201943373646	ss
-Human Geography and Urban Studies	0.430623020468996	ss
-Demography	0.396818537149396	ss
-Economics	0.257073217712121	ss
-Political Sciences and International Relations	0.25534457936055	ss
-Science and Technology Studies	0.246660229546709	ss
-Business and Management	0.246138894170838	ss
-Religious Studies and Theology	0.24085694365215	ah
-Social Statistics and Informatics	0.225532427471958	ss
-Interdisciplinary research in the Humanities	0.126314073832613	ah
-Film and Theatre Studies	0.0694199211027501	ah
-Classical Studies	0.0528195051868751	ah
-Cultural Studies	0.0313898773682001	ah
-Library and Information Science	0.0221841921784875	ah
+Psychology	21.0030321226345	ss
+Digital Humanities	17.0250460277207	dh
+Linguistics	16.9849733758788	ah
+Pedagogical & Educational Research	8.57532417906883	ss
+Philosophy	4.96752006113865	ah
+Library and Information Science	4.41258206829467	ah
+Anthropology	3.46900815167738	ss
+Business and Management	2.66526557126478	ss
+Archaeology	2.65887063920896	ah
+Media Studies and Communication	2.18757655308874	ah
+Musicology	2.01132455622327	ah
+Interdisciplinary research in the Social Sciences	1.98110934815001	ss
+History & Philosophy of Science	1.54931045263486	ah
+Art and Art History	1.39274176339517	ah
+Economics	1.25347435417952	ss
+Literature	1.18257745311622	ah
+Sociology	1.14960802562844	ss
+Science and Technology Studies	0.756499032977991	ss
+Political Sciences and International Relations	0.715700043174242	ss
+History	0.689646616280159	ah
+Human Geography and Urban Studies	0.630524510748215	ss
+Gender Studies	0.564242788163302	ss
+Environmental Studies	0.558964431545798	ss
+Law	0.47451974849758	ss
+Demography	0.430434192201652	ss
+Social Statistics and Informatics	0.227093398490207	ss
+Religious Studies and Theology	0.198006044395037	ah
+Interdisciplinary research in the Humanities	0.139968934390026	ah
+Film and Theatre Studies	0.0570694112918027	ah
+Cultural Studies	0.0445637663826425	ah
+Classical Studies	0.0434223781568064	ah
