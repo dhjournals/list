@@ -1,10 +1,1 @@
-# dhjournals
-
-Link to paper AIUCD + citation
-Link to preprint 
-
-Link to zotero + citation
-
-Presentation
-
-Versions log
+Go to: https://dhjournals.github.io/list/
