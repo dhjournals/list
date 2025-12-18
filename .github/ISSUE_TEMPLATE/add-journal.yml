@@ -1,0 +1,110 @@
+name: Add Journal(s)
+description: Submit one or more journals to be added to the DH Journals list
+title: "[Add Journal]: "
+labels: ["new-journal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Add a new journal to the DH Journals list
+        Please provide the information below for each journal you want to add.
+        If you want to add multiple journals, you can duplicate the Journal URL and DH Level fields or submit separate issues.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Journal 1
+
+  - type: input
+    id: journal1_url
+    attributes:
+      label: Journal URL
+      description: Provide the URL of the journal website
+      placeholder: https://example.com/journal
+    validations:
+      required: true
+
+  - type: dropdown
+    id: journal1_dh_level
+    attributes:
+      label: DH Level
+      description: Select the Digital Humanities level for this journal
+      options:
+        - Exclusively
+        - Significantly
+        - Marginally
+        - Mega-journals
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Journal 2 (Optional)
+
+  - type: input
+    id: journal2_url
+    attributes:
+      label: Journal URL
+      description: Provide the URL of the journal website
+      placeholder: https://example.com/journal
+    validations:
+      required: false
+
+  - type: dropdown
+    id: journal2_dh_level
+    attributes:
+      label: DH Level
+      description: Select the Digital Humanities level for this journal
+      options:
+        - Exclusively
+        - Significantly
+        - Marginally
+        - mega journals
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Journal 3 (Optional)
+
+  - type: input
+    id: journal3_url
+    attributes:
+      label: Journal URL
+      description: Provide the URL of the journal website
+      placeholder: https://example.com/journal
+    validations:
+      required: false
+
+  - type: dropdown
+    id: journal3_dh_level
+    attributes:
+      label: DH Level
+      description: Select the Digital Humanities level for this journal
+      options:
+        - Exclusively
+        - Significantly
+        - Marginally
+        - mega journals
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Additional Information
+      description: Any additional context or information about the journal(s)
+      placeholder: Optional notes about the journal(s)
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Note:** If you need to add more than 3 journals, please submit a separate issue or add the additional journal information in the Additional Information field above.
