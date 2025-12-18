@@ -15,7 +15,7 @@ This repository contains a comprehensive list of **Digital Humanities journals**
 
 ## Main Resources
 
-### 📊 Journal List Website
+### Journal List Website
 The interactive, searchable journal list is available at: **https://dhjournals.github.io/list/**
 
 The website features:
@@ -24,7 +24,7 @@ The website features:
 - Color-coded DH level indicators
 - Direct links to journal websites
 
-### 📚 Citations & Research
+### Citations & Research
 
 The list has been developed and used in the following publications:
 
@@ -34,7 +34,7 @@ The list has been developed and used in the following publications:
 
 **Note:** The citation analysis and network data covers journals through iteration 3. Journals added in iteration 4 and beyond are not included in the citation analysis.
 
-### 💾 Data Download
+### Data Download
 The complete dataset is available on Zenodo: https://zenodo.org/record/3406564
 
 ## Repository Structure
