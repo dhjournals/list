@@ -59,7 +59,6 @@
       <table id="table" class="display">
         <thead>
           <tr>
-            <th>ID</th>
             <th>E_ISSN</th>
             <th>P_ISSN</th>
             <th>TITLE</th>
@@ -67,6 +66,7 @@
             <th>level</th>
             <th>DH LEVEL</th>
             <th>Iteration</th>
+            <th style="display:none;">Sort Priority</th>
           </tr>
         </thead>
         <tbody id="table-body">
@@ -92,7 +92,7 @@
       $(document).ready(function() {
         // Show loading message
         $('#table-body').html(
-          '<tr><td colspan="8" class="text-center">' +
+          '<tr><td colspan="7" class="text-center">' +
           '<div class="spinner-border spinner-border-sm" role="status">' +
           '<span class="sr-only">Loading...</span></div> Loading journal data...' +
           '</td></tr>'
@@ -111,7 +111,7 @@
             // Check if we got data
             if (!results.data || results.data.length === 0) {
               tableBody.html(
-                '<tr><td colspan="8" class="text-warning text-center">' +
+                '<tr><td colspan="7" class="text-warning text-center">' +
                 'No journal data found.' +
                 '</td></tr>'
               );
@@ -125,15 +125,23 @@
               // Skip rows without ID
               if (!row.ID || row.ID.trim() === '') return;
               
-              // Determine row class based on DH level
+              // Determine row class and sort priority based on DH level
               let rowClass = '';
+              let sortPriority = 99; // Default for unknown levels
               const dhLevel = row['DH LEVEL'];
+              
               if (dhLevel === 'Exclusively') {
                 rowClass = 'table-success';
+                sortPriority = 1;
               } else if (dhLevel === 'Significantly') {
                 rowClass = 'table-warning';
-              } else if (dhLevel === 'Marginally' || dhLevel === 'Mega-journal') {
+                sortPriority = 2;
+              } else if (dhLevel === 'Marginally') {
                 rowClass = 'table-danger';
+                sortPriority = 3;
+              } else if (dhLevel === 'Mega-journal') {
+                rowClass = 'table-danger';
+                sortPriority = 4;
               }
               
               // Create title with link if URL exists
@@ -143,9 +151,8 @@
                 '<a href="' + url + '" target="_blank">' + title + '</a>' :
                 title;
               
-              // Create and append table row
+              // Create and append table row (ID column removed, sort priority hidden)
               const rowHtml = '<tr class="' + rowClass + '">' +
-                '<td>' + (row.ID || '') + '</td>' +
                 '<td>' + (row.E_ISSN || '') + '</td>' +
                 '<td>' + (row.P_ISSN || '') + '</td>' +
                 '<td>' + titleCell + '</td>' +
@@ -153,6 +160,7 @@
                 '<td>' + (row.level || '') + '</td>' +
                 '<td>' + (row['DH LEVEL'] || '') + '</td>' +
                 '<td>' + (row.Iteration || '') + '</td>' +
+                '<td style="display:none;">' + sortPriority + '</td>' +
                 '</tr>';
               
               tableBody.append(rowHtml);
@@ -161,30 +169,20 @@
             // Initialize DataTable after data is loaded
             $('#table').DataTable({
               "iDisplayLength": 25,
-              "order": [[0, 'asc']] // Sort by ID column
+              "order": [
+                [7, 'asc'],  // Sort by hidden priority column (Exclusively first)
+                [2, 'asc']   // Then by TITLE column alphabetically ascending (A-Z)
+              ],
+              "columnDefs": [
+                { "visible": false, "targets": 7 } // Hide the sort priority column
+              ]
             });
           },
           error: function(error, file) {
             console.error('Error loading journal data:', error);
-            console.error('Attempted to load file:', file);
-            
-            let errorMessage = 'Error loading data. ';
-            
-            // Check if this is a CORS error (local file access)
-            if (window.location.protocol === 'file:') {
-              errorMessage += 'You are viewing this page from your local filesystem (file://). ' +
-                'For security reasons, browsers block loading external files in this mode. ' +
-                '<br><br><strong>To test locally:</strong><br>' +
-                '1. Run a local web server (e.g., <code>python3 -m http.server 8000</code>)<br>' +
-                '2. Open <code>http://localhost:8000</code> in your browser<br>' +
-                '<br>This page will work correctly when deployed to GitHub Pages.';
-            } else {
-              errorMessage += 'Please check the browser console for details or try refreshing the page.';
-            }
-            
             $('#table-body').html(
-              '<tr><td colspan="8" class="text-danger text-center p-4">' +
-              errorMessage +
+              '<tr><td colspan="7" class="text-danger text-center p-4">' +
+              'Error loading journal data. Please refresh the page.' +
               '</td></tr>'
             );
           }
