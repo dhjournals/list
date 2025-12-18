@@ -20,6 +20,16 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        ### DH Level Definitions
+        
+        - **Exclusively**: The journal is completely devoted to publishing Digital Humanities articles
+        - **Significantly**: A significant set of publications deal with Digital Humanities
+        - **Marginally**: Only a small set of publications are Digital Humanities
+        - **Mega-journal**: Large multidisciplinary journals that may include some DH content
+
   - type: dropdown
     id: journal_dh_level
     attributes:
@@ -29,7 +39,7 @@ body:
         - Exclusively
         - Significantly
         - Marginally
-        - mega journals
+        - Mega-journal
     validations:
       required: true
 
